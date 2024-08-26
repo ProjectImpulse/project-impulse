@@ -9,7 +9,7 @@
   <Navbar let:NavContainer>
       <NavContainer class="rounded-lg border bg-white px-8 py-8 dark:bg-gray-600">
           <NavBrand href="{base}/">
-              <img src="/images/logo-assets.png" class="sm:h-200 me-3 h-20" alt="PI Logo" />
+              <img src="{base}/images/logo-assets.png" class="sm:h-200 me-3 h-20" alt="PI Logo" />
           </NavBrand>
           <NavHamburger></NavHamburger>
           <NavUl>
@@ -38,7 +38,7 @@
       <Navbar let:NavContainer>
           <NavContainer class="footer-background rounded-lg border bg-white px-8 py-8 dark:bg-gray-600">
               <NavBrand href="{base}/">
-                  <img src="/images/logo-assets.png" class="sm:h-200 me-3 h-20" alt="PI Logo" />
+                  <img src="{base}/images/logo-assets.png" class="sm:h-200 me-3 h-20" alt="PI Logo" />
               </NavBrand>
               <NavHamburger></NavHamburger>
               <NavUl>
