@@ -12,8 +12,8 @@
           </NavBrand>
           <NavHamburger></NavHamburger>
           <NavUl>
-              <NavLi href="/about">People</NavLi>
-              <NavLi href="/docs/components/navbar">Blog</NavLi>
+              <NavLi href="/">People</NavLi>
+              <NavLi href="/">Blog</NavLi>
           </NavUl>
           <NavUl>
             <NavLi href="/contact">
@@ -42,9 +42,9 @@
               <NavHamburger></NavHamburger>
               <NavUl>
                   <NavLi href="/">Github</NavLi>
-                  <NavLi href="/about">Twitter</NavLi>
-                  <NavLi href="/contact">Youtube</NavLi>
-                  <NavLi href="/docs/components/navbar">3am BS</NavLi>
+                  <NavLi href="/">Twitter</NavLi>
+                  <NavLi href="/">Youtube</NavLi>
+                  <NavLi href="/">3am BS</NavLi>
               </NavUl>
               <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8 dark:border-gray-700" />
               <FooterCopyright href="https://projectimpulse.github.io/" by="Project Impulse"
