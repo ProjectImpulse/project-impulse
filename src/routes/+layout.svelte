@@ -1,19 +1,21 @@
-<script>
+<script lang='ts'>
   import '../app.css';
+  import { page } from '$app/stores';
   import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
   import { Footer, FooterBrand, FooterCopyright, FooterIcon, FooterLink, FooterLinkGroup } from 'flowbite-svelte';
+  $: activeUrl = $page.url.pathname;
 </script>
 
 <div class="app">
   <Navbar let:NavContainer>
-      <NavContainer class="rounded-lg border bg-white px-8 py-8 dark:bg-gray-600">
+      <NavContainer class="navbar rounded-lg border bg-white px-8 py-8 dark:bg-gray-600">
           <NavBrand href="/">
               <img src="/images/logo-assets.png" class="sm:h-200 me-3 h-20" alt="PI Logo" />
           </NavBrand>
           <NavHamburger></NavHamburger>
-          <NavUl>
-              <NavLi href="/">People</NavLi>
-              <NavLi href="/">Blog</NavLi>
+          <NavUl {activeUrl} class="">
+            <NavLi href="/people" style="font-size: 25px; font-family: 'Bruno Ace', sans-serif;">People</NavLi>
+            <NavLi href="https://blog.kuberapp.net/" style="font-size: 25px; font-family: 'Bruno Ace', sans-serif;">Blog</NavLi>
           </NavUl>
           <NavUl>
             <NavLi href="/contact">
@@ -34,22 +36,35 @@
   </main>
 
   <Footer>
-      <Navbar let:NavContainer>
-          <NavContainer class="footer-background rounded-lg border bg-white px-8 py-8 dark:bg-gray-600">
-              <NavBrand href="/">
-                  <img src="/images/logo-assets.png" class="sm:h-200 me-3 h-20" alt="PI Logo" />
-              </NavBrand>
-              <NavHamburger></NavHamburger>
-              <NavUl>
-                  <NavLi href="/">Github</NavLi>
-                  <NavLi href="/">Twitter</NavLi>
-                  <NavLi href="/">Youtube</NavLi>
-                  <NavLi href="/">3am BS</NavLi>
-              </NavUl>
-              <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8 dark:border-gray-700" />
-              <FooterCopyright href="https://projectimpulse.github.io/" by="Project Impulse"
-              ></FooterCopyright>
-          </NavContainer>
-      </Navbar>
-  </Footer>
+    <Navbar let:NavContainer>
+      <NavContainer class="footer-background rounded-lg border bg-white px-8 py-8 dark:bg-gray-600">
+        <FooterBrand href="/">
+          <img src="/images/logo-assets.png" class="sm:h-200 me-3 h-40" alt="PI Logo" />
+        </FooterBrand>
+        <div class="footer-text grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+          <div>
+            <FooterLinkGroup>
+              <FooterLink liClass="mb-4" href="/https://github.com/ProjectImpulse" style="color: black;" >Github</FooterLink>
+              <FooterLink liClass="mb-4" href="/" style="color: black;" >Twitter</FooterLink>
+            </FooterLinkGroup>
+          </div>
+          <div>
+            <FooterLinkGroup>
+              <FooterLink liClass="mb-4" href="/" style="color: black;" >Youtube</FooterLink>
+              <FooterLink liClass="mb-4" href="/" style="color: black;" >3am BS</FooterLink>
+            </FooterLinkGroup>
+          </div>
+        </div>
+        <hr class="my-6 border-gray-200 sm:mx-auto lg:my-12 dark:border-gray-700" />
+        <FooterCopyright style="color: black;" href="https://projectimpulse.pages.dev/" by="Project Impulse"></FooterCopyright>
+      </NavContainer>
+    </Navbar>
+  </Footer>  
 </div>
+
+<style>
+  .footer-text {
+    font-size: 25px;
+  }
+
+</style>
